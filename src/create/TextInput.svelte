@@ -4,6 +4,7 @@
   export let multiline: boolean = false;
 </script>
 
+<!-- svelte-ignore a11y-label-has-associated-control -->
 <style>
   label {
     font-weight: var(--typeWeightBold);
