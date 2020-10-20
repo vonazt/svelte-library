@@ -17,10 +17,6 @@
     max-width: 100%;
     padding: 0;
   }
-  li {
-    position: relative;
-    display: flex;
-  }
   .heart {
     position: absolute;
     bottom: calc(-1 * var(--spacingSmall));
@@ -30,7 +26,7 @@
 
 <ul>
   {#each books as book}
-    <BookCover {book} on:book-select interactive />
+    <BookCover {book} interactive />
     {#if book.favorite}
       <div class="heart">
         <Heart />

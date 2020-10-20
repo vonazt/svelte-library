@@ -18,11 +18,7 @@
 </style>
 
 <nav>
-  <Button>&lt; Back</Button>
+  <Button to="/">&lt; Back</Button>
 
-  <div class="text">
-    To the
-    <span>Library</span>
-
-  </div>
+  <div class="text">To the <span>Library</span></div>
 </nav>

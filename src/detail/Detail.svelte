@@ -1,6 +1,6 @@
 <script lang="ts">
   import { onMount } from "svelte";
-  import { httpGet } from "../common/api";
+  import { httpGet, httpPut } from "../common/api";
   import type { Book } from "../types";
   import BackButtonRow from "../common/BackButtonRow.svelte";
   import BookCover from "../common/BookCover.svelte";
@@ -13,6 +13,12 @@
     const { data } = await httpGet(`/${id}`);
     book = data;
   });
+
+  const handleFavoriteClick = async (): Promise<void> => {
+    const toggledBook = { ...book, favorite: !book.favorite };
+    const { ok } = await httpPut(`/${book.id}`, toggledBook);
+    if (ok) book = toggledBook;
+  };
 </script>
 
 <style>
@@ -44,7 +50,9 @@
     <div class="cover">
       <BookCover {book} />
       <div class="favorite">
-        <Button>{book.favorite ? 'Unfavorite' : 'Favorite'}</Button>
+        <Button on:click={handleFavoriteClick}>
+          {book.favorite ? 'Unfavorite' : 'Favorite'}
+        </Button>
       </div>
     </div>
     <div>
