@@ -6,6 +6,7 @@
   import BookCover from "../common/BookCover.svelte";
   import Button from "../common/Button.svelte";
   import Header from "../common/Header.svelte";
+
   export let id;
 
   let book: Book;

@@ -1,10 +1,10 @@
 export type Book = {
-  id: number;
+  id?: number;
   title: string;
   author: string;
   cover: string;
   about: string;
-  variation: number;
+  variation?: number;
   favorite?: boolean;
 };
 
