@@ -43,4 +43,4 @@
 
 <Button>+ Add Book</Button>
 
-<BookGrid {books} />
+<BookGrid {books} on:book-select />

@@ -12,3 +12,7 @@ export type Req = {
   ok: boolean;
   data: any;
 };
+
+export type BookSelectEvent = {
+  detail: { id: number };
+};
